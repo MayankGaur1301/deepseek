@@ -22,15 +22,15 @@ export default function Home() {
               onClick={() => (expand ? setExpand(false) : setExpand(true))}
               className="rotate-180"
               src={assets.menu_icon}
-              alt=""
+              alt="Menu toggle icon" // Added alt text
             />
-            <Image className="opacity-70" src={assets.chat_icon} alt="" />
+            <Image className="opacity-70" src={assets.chat_icon} alt="Chat icon" />
           </div>
           {messages.length === 0 ? (
             <>
               <div className="flex items-center gap-3">
-                <Image src={assets.logo_icon} className="h-16" />
-                <p className="text-2xl font-medium">Hi, I'm DeepSeek.</p>
+                <Image src={assets.logo_icon} alt="Logo icon" className="h-16" />
+                <p className="text-2xl font-medium">Hi, I&apos;m DeepSeek.</p> {/* Fixed apostrophe */}
               </div>
               <p className="text-sm mt-2">How can I help you today?</p>
             </>

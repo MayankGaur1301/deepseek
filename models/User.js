@@ -2,10 +2,10 @@ import mongoose from "mongoose";
 
 const UserSchema = new mongoose.Schema(
   {
-    id: { type: String, required: true },
+    clerkId: { type: String, required: true, unique: true }, 
     name: { type: String, required: true },
     email: { type: String, required: true },
-    image: { type: String, required: false },
+    image: { type: String },
   },
   {
     timestamps: true,

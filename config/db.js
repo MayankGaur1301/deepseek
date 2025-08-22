@@ -1,12 +1,9 @@
 import mongoose from "mongoose";
 
-let cached = global.mongoose || {
-  conn: null,
-  promise: null,
-};
+let cached = global.mongoose || { conn: null, promise: null };
 
 export default async function connectDB() {
-  if (cached.conn) return cached.conn; 
+  if (cached.conn) return cached.conn;
 
   if (!cached.promise) {
     cached.promise = mongoose
@@ -21,8 +18,8 @@ export default async function connectDB() {
     cached.conn = await cached.promise;
   } catch (error) {
     console.error("Error connecting to MongoDB", error);
-    throw error; // re-throw so app knows it failed
+    throw error;
   }
 
-  return cached.conn; 
+  return cached.conn;
 }

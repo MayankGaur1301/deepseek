@@ -1,4 +1,4 @@
-import { Webhook } from "svix";
+import { Webhook } from "svix"; 
 import connectDB from "@/config/db";
 import User from "@/models/User";
 import { headers } from "next/headers";
@@ -28,7 +28,7 @@ export async function POST(req) {
   const { data, type } = evt;
 
   const userData = {
-    clerkId: data.id,
+    clerkId: data.id, // ✅ Matches schema now
     email: data.email_addresses[0].email_address,
     name: `${data.first_name || ""} ${data.last_name || ""}`.trim(),
     image: data.image_url,
